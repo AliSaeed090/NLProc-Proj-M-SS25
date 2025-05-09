@@ -38,3 +38,37 @@ This repository hosts the code for a semester-long project on building and exper
 - **Close paraphrases next**: “mat” vs. “rug” or “sits” vs. “lies” still rank highly.  
 - **Irrelevant content drops off**: Unrelated sentences score near zero.  
 - **Conceptual grouping**: Queries about cars vs. bikes retrieve both speed-focused and spec-focused sentences because they share the broader “vehicle” concept, not just exact words.
+
+
+## Teams & Tracks
+## Week 3 task 
+## Team Neural Narrators
+## Hafiz Muhammad Ali Saeed (2161224)
+## Ahsan Munir (2121328)
+## Muhammad Sohail Anwar (2112858)
+
+## How Vector Search Works
+
+# Retriever
+
+A minimal document‐retriever using FAISS + SentenceTransformers.
+
+## Installation
+
+```bash
+pip install sentence-transformers faiss-cpu PyPDF2
+
+## Using `main.py`
+
+We also provide a simple command‐line interface in `main.py` that wraps the core `Retriever` class for quick indexing and search without writing any Python code.
+
+### 1. Index your documents
+
+```bash
+python main.py --index \
+  --model all-MiniLM-L6-v2 \
+  --chunk-size 500 \
+  --chunk-overlap 50 \
+  --docs docs/intro.md reports/whitepaper.pdf \
+  --output-index my_index.faiss \
+  --output-chunks my_chunks.pkl

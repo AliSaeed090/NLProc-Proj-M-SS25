@@ -2,3 +2,6 @@ openai
 sentence-transformers 
 faiss-cpu 
 hf_xet 
+faiss-cpu
+sentence-transformers
+PyPDF2
