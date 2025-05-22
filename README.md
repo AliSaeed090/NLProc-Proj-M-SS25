@@ -1,74 +1,113 @@
-# RAG Project – Summer Semester 2025
+# Retrieval-Augmented Text Generation Pipeline
 
-## Overview
-This repository hosts the code for a semester-long project on building and experimenting with Retrieval-Augmented Generation (RAG) systems. Students start with a shared baseline and then explore specialized variations in teams.
+This repository provides a simple retrieval-augmented text generation system using:
 
-## Structure
-- `baseline/`: Common starter system (retriever + generator)
-- `experiments/`: Each team's independent exploration
-- `evaluation/`: Common tools for comparing results
-- `utils/`: Helper functions shared across code
+* **SentenceTransformers** + **FAISS** for document embedding and retrieval
+* **Hugging Face Transformers** (e.g., Flan-T5) for sequence-to-sequence generation
+* A lightweight **logging** mechanism for tracing queries and generated answers
 
-## Getting Started
-1. Clone the repo
-2. `cd baseline/`
-3. Install dependencies: `pip install -r ../requirements.txt`
+## Project Structure
 
-## Teams & Tracks
-## Week 2 task 
-## Team Neural Narrators
-## Hafiz Muhammad Ali Saeed (2161224)
-## Ahsan Munir (2121328)
-## Muhammad Sohail Anwar (2112858)
-
-## How Vector Search Works
-
-1. **Embedding**  
-   We use a pre-trained SentenceTransformer (e.g. `all-MiniLM-L6-v2`) to convert each text snippet into a fixed-length vector that captures its meaning.
-
-2. **Indexing**  
-   All vectors are stored in a FAISS `IndexFlatIP`, which performs fast inner-product (cosine) similarity search over normalized embeddings.
-
-3. **Querying**  
-   A user’s query is encoded into a vector the same way, then FAISS returns the top-k snippets whose vectors are closest (highest cosine similarity) to the query vector.
-
-## What We Observed
-
-- **Exact synonyms first**: “feline” ≈ “cat” gives the highest score.  
-- **Close paraphrases next**: “mat” vs. “rug” or “sits” vs. “lies” still rank highly.  
-- **Irrelevant content drops off**: Unrelated sentences score near zero.  
-- **Conceptual grouping**: Queries about cars vs. bikes retrieve both speed-focused and spec-focused sentences because they share the broader “vehicle” concept, not just exact words.
-
-
-## Teams & Tracks
-## Week 3 task 
-## Team Neural Narrators
-## Hafiz Muhammad Ali Saeed (2161224)
-## Ahsan Munir (2121328)
-## Muhammad Sohail Anwar (2112858)
-
-## How Vector Search Works
-
-# Retriever
-
-A minimal document‐retriever using FAISS + SentenceTransformers.
+```
+├── generator/            # Seq2Seq Generator module
+│   ├── __init__.py
+│   └── generator.py      # Generator class with JSONL logging
+│
+├── retriever/            # FAISS-backed Retriever module
+│   ├── __init__.py
+│   └── retriever.py      # Retriever class: read, chunk, embed, index, query
+│
+├── logger/               # Simple logging utility
+│   ├── __init__.py
+│   └── logger.py         # Logs question, context IDs, prompt, answer
+│
+├── pipeline.py           # End-to-end orchestration: load/index docs, retrieve, generate, log
+├── test_inputs.json      # Sample test cases (question/context/expected_answer)
+├── tests/                # Pytest suite
+│   └── test_pipeline.py  # Parametrized tests for non-empty, consistency, expected answer
+└── README.md             # This file
+```
 
 ## Installation
 
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/yourusername/yourrepo.git
+   cd yourrepo
+   ```
+
+2. **Create a Python environment**
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate      # macOS/Linux
+   .\.venv\\Scripts\\activate    # Windows PowerShell
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   *Requirements should include:*
+
+   * `transformers`
+   * `torch`
+   * `sentence-transformers`
+   * `faiss-cpu` (or `faiss-gpu`)
+   * `PyPDF2`
+   * `pytest`
+
+## Usage
+
+1. **Prepare documents**
+
+   * Place your `.txt`, `.md`, or `.pdf` files under `data/` (or update `docs_dir` in `pipeline.py`).
+
+2. **Build or load the embeddings**
+
+   ```bash
+   python pipeline.py
+   ```
+
+   * If embeddings exist in `./embeddings/`, they will be loaded.
+   * Otherwise, documents in `data/` will be indexed and saved.
+
+3. **Run a query**
+
+   ```bash
+   python pipeline.py
+   # It will prompt question in __main__ or you can modify pipeline.run()
+   ```
+
+## Testing
+
+Ensure `test_inputs.json` exists at project root with at least one test case:
+
+```json
+[
+  {
+    "question": "What is the capital of France?",
+    "context": "France's capital city is Paris, known for the Eiffel Tower.",
+    "expected_answer": "Paris"
+  }
+]
+```
+
+Run the pytest suite:
+
 ```bash
-pip install sentence-transformers faiss-cpu PyPDF2
+pytest -q
+```
 
-## Using `main.py`
+## Customization
 
-We also provide a simple command‐line interface in `main.py` that wraps the core `Retriever` class for quick indexing and search without writing any Python code.
+* **Retriever settings**: adjust `chunk_size` and `chunk_overlap` in `Retriever()`
+* **Model selection**: change `model_name` in `Generator()` (e.g., `flan-t5-large`)
+* **Logging**: modify `Logger` or adjust `log_file` path in `Generator`
 
-### 1. Index your documents
+ 
 
-```bash
-python main.py --index \
-  --model all-MiniLM-L6-v2 \
-  --chunk-size 500 \
-  --chunk-overlap 50 \
-  --docs docs/intro.md reports/whitepaper.pdf \
-  --output-index my_index.faiss \
-  --output-chunks my_chunks.pkl
+ 

@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "context": "France's capital city is Paris, known for the Eiffel Tower.",
+    "expected_answer": "Paris"
+  },
+  {
+    "question": "What is the capital of GERMANY?",
+    "context": "Germany's capital city is Berlin, known for its history and culture.",
+    "expected_answer": "Berlin"
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "context": "The Mona Lisa is a famous portrait painted by Leonardo da Vinci in the early 16th century.",
+    "expected_answer": "Leonardo da Vinci"
+  },
+  {
+    "question": "What is the chemical symbol for table salt?",
+    "context": "Table salt is sodium chloride, with the chemical formula NaCl.",
+    "expected_answer": "NaCl"
+  },
+  {
+    "question": "Which planet is farthest from the sun in our solar system?",
+    "context": "The eight planets in order from the sun are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+    "expected_answer": "Neptune"
+  }
+]

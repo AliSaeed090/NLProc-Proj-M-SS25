@@ -123,3 +123,5 @@ if __name__ == "__main__":
 
     for chunk, dist in r.query("test FAISS", top_k=2):
         print(f"→ {chunk!r} (distance={dist:.4f})")
+# nafees-iqbal github
+# Halum
