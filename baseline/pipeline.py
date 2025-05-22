@@ -55,6 +55,6 @@ class Pipeline:
 
 if __name__ == "__main__":
     pipe = Pipeline()
-    question = "tell me about  Pakistan?"
+    question = "what is nural network"
     print(pipe.run(question))
 

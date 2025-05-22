@@ -58,7 +58,7 @@ class Retriever:
         self.index.add(embeddings)
         self.documents = texts
 
-    def query(self, question: str, top_k: int = 1) -> List[Tuple[str, str]]:
+    def query(self, question: str, top_k: int = 10) -> List[Tuple[str, str]]:
         """
         Embed the question and retrieve top_k chunks.
         Returns list of (doc_id, chunk).

@@ -12,11 +12,18 @@ class Logger:
         if not os.path.exists(self.csv_file):
             with open(self.csv_file, "w", newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(["group_id", "timestamp", "question", "retrieved_chunks", "prompt", "generated_answer"])
+                writer.writerow([
+                    "group_id",
+                    "timestamp",
+                    "question",
+                    "retrieved_chunks",
+                    "prompt",
+                    "generated_answer"
+                ])
         # ensure JSON file exists with empty list
         if not os.path.exists(self.json_file):
             with open(self.json_file, "w", encoding='utf-8') as f:
-                json.dump([], f)
+                json.dump([], f, ensure_ascii=False, indent=2)
 
     def log(self, question: str, retrieved: list, prompt: str, answer: str):
         entry = {
@@ -27,15 +34,24 @@ class Logger:
             "prompt": prompt,
             "generated_answer": answer,
         }
-        # append to JSON array
+
+        # append to JSON array, handling empty/corrupt files
         with open(self.json_file, "r+", encoding='utf-8') as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+                if not isinstance(data, list):
+                    # if the file contains something other than a list, reset it
+                    data = []
+            except json.JSONDecodeError:
+                data = []
+
             data.append(entry)
+            # rewrite the file from the start
             f.seek(0)
             json.dump(data, f, ensure_ascii=False, indent=2)
             f.truncate()
 
-        # append to CSV as before
+        # append to CSV
         with open(self.csv_file, "a", newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow([
