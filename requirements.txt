@@ -1,5 +1,5 @@
 # Core vector store
-faiss-cpu
+
 
 # Numeric
 numpy>=1.25.0,<1.26.0
@@ -10,7 +10,7 @@ torchvision==0.17.2
 
 # Transformers + Sentence-Transformers
 transformers>=4.41.0,<5.0.0
-sentence-transformers>=2.2.2
+sentence-transformers==2.2.2
 
 # Hugging Face Hub (restores cached_download)
 huggingface_hub==0.25.2
@@ -19,5 +19,23 @@ huggingface_hub==0.25.2
 sentencepiece
 nltk
 
-# PDF parsing
-PyPDF2
+
+
+langchain-community
+
+faiss-cpu==1.7.4
+langchain==0.2.0
+PyPDF2==3.0.1
+
+# Streamlit for UI
+streamlit==1.35.0
+
+# Utilities
+
+tqdm>=4.66.4
+
+# Optional: if you use HuggingFace LLaMA3 or similar (for LLaMA3 swap-in later)
+accelerate>=0.30.0
+openai==0.28
+python-dotenv
+cerebras_cloud_sdk

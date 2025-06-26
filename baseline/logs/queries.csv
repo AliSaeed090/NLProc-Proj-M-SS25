@@ -161,3 +161,810 @@ Question:
 what is nural network
 
 ","Neural networks are built out of neural units, originally inspired by biological neurons but now simply an abstract computational device. Each neural unit multiplies input values by a weight vector, adds a bias, and then applies a non-linear activation function like sigmoid, tanh, or rectified linear unit. In a fully-connected, feedforward network, each unit in layer i is connected to each unit in layer i+1, and there are no cycles. The power of neural networks comes from the ability of early layers to learn representations that can be utilized by later layers in the network. Neural networks are trained by optimization algorithms like gradient descent. Error backpropagation, backward differentiation on a computation graph, is used to compute the gradients of the loss function for a network. 26 CHAPTER 7 • NEURAL NETWORKS • Neural language models use a neural network as a probabilistic classifier, to compute the probability of the next word given the previous n words."
+Team Neural Narrators,2025-06-26T02:54:59.606564,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'
+
+Context Source Info:
+{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}
+{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}
+{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}
+Context:
+Midterm
+ 
+Presentation
+ 
+Requirements
+ 
+Your
+ 
+presentation
+ 
+should
+ 
+take
+ 
+7
+ 
+minutes
+.
+ 
+You
+ 
+should
+ 
+prepare
+ 
+presentation
+ 
+slides
+ 
+and
+ 
+upload
+ 
+them
+ 
+in
+ 
+the
+ 
+VC
+ 
+course
+ 
+after
+ 
+your
+ 
+presentation.
+ 
+The
+ 
+presentation
+ 
+will
+ 
+take
+ 
+place
+ 
+on
+ 
+Thursday,
+ 
+26.6.,
+ 
+in
+ 
+WE5
+ 
+01.003
+.
+ 
+The
+ 
+time
+ 
+slot
+ 
+for
+ 
+your
+ 
+group
+ 
+will
+ 
+be
+ 
+published
+ 
+in
+ 
+the
+ 
+announcement
+ 
+forum.
+ 
+The
+ 
+presentation
+ 
+must
+ 
+contain
+ 
+the
+ 
+following
+ 
+points:
+ 
+1.
+ 
+Use
+ 
+Case
+ 
+/
+ 
+Problem
+ 
+Statement
+ 
+Describe
+ 
+the
+ 
+goal
+ 
+of
+ 
+your
+ 
+RAG
+ 
+system:
+ 
+●
+ 
+Why
+ 
+is
+ 
+this
+ 
+problem
+ 
+interesting
+ 
+or
+ 
+useful?
+ 
+●
+ 
+What
+ 
+types
+ 
+of
+ 
+questions
+ 
+is
+ 
+it
+ 
+designed
+ 
+to
+ 
+answer?
+ 
+●
+ 
+What
+ 
+kind
+ 
+of
+ 
+documents
+ 
+are
+ 
+you
+ 
+using?
+ 
+2.
+ 
+RAG
+ 
+Pipeline
+ 
+Overview
+ 
+Present
+ 
+the
+ 
+structure
+ 
+of
+ 
+your
+ 
+system:
+ 
+Make
+ 
+a
+ 
+diagram
+ 
+showing
+ 
+how
+ 
+the
+ 
+components
+ 
+connect.
+ 
+Name
+ 
+the
+ 
+different
+ 
+tools
+ 
+that
+ 
+you
+ 
+used
+ 
+(e.g.
+ 
+FAISS,
+ 
+flan-t5,
+ 
+…).
+the
+ 
+structure
+ 
+of
+ 
+your
+ 
+system:
+ 
+Make
+ 
+a
+ 
+diagram
+ 
+showing
+ 
+how
+ 
+the
+ 
+components
+ 
+connect.
+ 
+Name
+ 
+the
+ 
+different
+ 
+tools
+ 
+that
+ 
+you
+ 
+used
+ 
+(e.g.
+ 
+FAISS,
+ 
+flan-t5,
+ 
+…).
+ 
+ 
+3.
+ 
+Live
+ 
+Demonstration
+ 
+You
+ 
+must
+ 
+include
+ 
+a
+ 
+live
+ 
+demo
+ 
+of
+ 
+your
+ 
+pipeline
+ 
+running
+ 
+end-to-end:
+ 
+●
+ 
+Input
+ 
+a
+ 
+question
+ 
+or
+ 
+query
+ 
+live.
+ 
+●
+ 
+Show
+ 
+the
+ 
+retrieved
+ 
+chunks,
+ 
+the
+ 
+generated
+ 
+answer,
+ 
+and
+ 
+any
+ 
+logs.
+ 
+The
+ 
+demo
+ 
+should
+ 
+show
+ 
+that
+ 
+your
+ 
+system
+ 
+is
+ 
+functional
+ 
+and
+ 
+connected
+ 
+from
+ 
+retrieval
+ 
+to
+ 
+generation.
+ 
+4.
+ 
+Test
+ 
+Set
+ 
+and
+ 
+Evaluation
+ 
+Describe
+ 
+your
+ 
+test
+ 
+setup:
+ 
+●
+ 
+What
+ 
+kinds
+ 
+of
+ 
+questions
+ 
+are
+ 
+in
+ 
+your
+ 
+test
+ 
+set?
+ 
+●
+ 
+How
+ 
+many
+ 
+examples
+ 
+did
+ 
+you
+ 
+use?
+ 
+Report
+ 
+at
+ 
+least
+ 
+one
+ 
+evaluation
+ 
+metric
+:
+ 
+●
+ 
+E.g.,
+ 
+Precision,
+ 
+Recall,
+ 
+F1-score,
+ 
+or
+ 
+a
+ 
+relevance
+ 
+score.
+ 
+●
+ 
+Briefly
+ 
+explain
+ 
+how
+ 
+it
+ 
+was
+ 
+computed.
+ 
+Show
+ 
+at
+ 
+least
+ 
+two
+ 
+example
+ 
+inputs
+ 
+and
+metric
+:
+ 
+●
+ 
+E.g.,
+ 
+Precision,
+ 
+Recall,
+ 
+F1-score,
+ 
+or
+ 
+a
+ 
+relevance
+ 
+score.
+ 
+●
+ 
+Briefly
+ 
+explain
+ 
+how
+ 
+it
+ 
+was
+ 
+computed.
+ 
+Show
+ 
+at
+ 
+least
+ 
+two
+ 
+example
+ 
+inputs
+ 
+and
+ 
+outputs
+ 
+with
+ 
+retrieved
+ 
+text
+ 
+and
+ 
+generation
+ 
+of
+ 
+the
+ 
+system
+ 
+succeeding
+ 
+and
+ 
+the
+ 
+system
+ 
+failing
+ 
+to
+ 
+retrieve
+ 
+the
+ 
+correct
+ 
+answer.
+ 
+Explain
+ 
+why.
+ 
+ 
+5.
+ 
+Next
+ 
+Steps
+ 
+What
+ 
+are
+ 
+the
+ 
+limitations
+ 
+or
+ 
+open
+ 
+issues
+ 
+in
+ 
+your
+ 
+current
+ 
+system?
+ 
+What
+ 
+improvement
+ 
+ideas
+ 
+are
+ 
+you
+ 
+considering?
+
+Question:
+tell me about Midterm Presentation Requirements
+
+Answer:",I don’t know based on the provided context.
+Team Neural Narrators,2025-06-26T04:02:13.971617,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]",
+Team Neural Narrators,2025-06-26T04:02:49.206649,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': ''}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]",
+Team Neural Narrators,2025-06-26T04:03:01.946152,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': ''}, {'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': ''}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]",
+Team Neural Narrators,2025-06-26T04:06:02.579265,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]","Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points:
+
+1. Use Case/Problem Statement
+2. RAG Pipeline Overview
+3. Live Demonstration
+4. Test Set and Evaluation
+5. Next Steps
+
+Additionally, there are specific requirements for each point:
+
+1. Use Case/Problem Statement:
+   - Describe the goal of your RAG system.
+   - Specify why this problem is interesting or useful.
+   - Define what types of questions it is designed to answer.
+   - Identify the type of documents you are using.
+
+2. RAG Pipeline Overview:
+   - Present the structure of your system.
+   - Create a diagram showing how the components connect.
+   - Name the different tools you used (e.g. FAISS, flan-t5, …).
+
+3. Live Demonstration:
+   - Include a live demo of your pipeline running end-to-end.
+   - Input a question or query live.
+   - Show the retrieved chunks, the generated answer, and any logs.
+   - The demo should show that your system is functional and connected from retrieval to generation.
+
+4. Test Set and Evaluation:
+   - Describe your test setup.
+   - Specify the types of questions in your test set.
+   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, etc.).
+   - Explain how the metric was computed.
+   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.
+
+5. Next Steps:
+   - Identify the limitations or open issues in your current system.
+   - Specify the improvement ideas you are considering."
+Team Neural Narrators,2025-06-26T04:10:08.483378,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points:\n\n1. Use Case/Problem Statement\n2. RAG Pipeline Overview\n3. Live Demonstration\n4. Test Set and Evaluation\n5. Next Steps\n\nAdditionally, there are specific requirements for each point:\n\n1. Use Case/Problem Statement:\n   - Describe the goal of your RAG system.\n   - Specify why this problem is interesting or useful.\n   - Define what types of questions it is designed to answer.\n   - Identify the type of documents you are using.\n\n2. RAG Pipeline Overview:\n   - Present the structure of your system.\n   - Create a diagram showing how the components connect.\n   - Name the different tools you used (e.g. FAISS, flan-t5, …).\n\n3. Live Demonstration:\n   - Include a live demo of your pipeline running end-to-end.\n   - Input a question or query live.\n   - Show the retrieved chunks, the generated answer, and any logs.\n   - The demo should show that your system is functional and connected from retrieval to generation.\n\n4. Test Set and Evaluation:\n   - Describe your test setup.\n   - Specify the types of questions in your test set.\n   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, etc.).\n   - Explain how the metric was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.\n\n5. Next Steps:\n   - Identify the limitations or open issues in your current system.\n   - Specify the improvement ideas you are considering.'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]","Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation must contain the following points:
+
+1. **Use Case/Problem Statement**:
+   - Describe the goal of your RAG system.
+   - Why is this problem interesting or useful?
+   - What types of questions is it designed to answer?
+   - What kind of documents are you using?
+
+2. **RAG Pipeline Overview**:
+   - Present the structure of your system.
+   - Make a diagram showing how the components connect.
+   - Name the different tools you used (e.g. FAISS, flan-t5, …).
+
+3. **Live Demonstration**:
+   - You must include a live demo of your pipeline running end-to-end.
+   - Input a question or query live.
+   - Show the retrieved chunks, the generated answer, and any logs.
+   - The demo should show that your system is functional and connected from retrieval to generation.
+
+4. **Test Set and Evaluation**:
+   - Describe your test setup.
+   - What kinds of questions are in your test set?
+   - How many examples did you use?
+   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, or a relevance score).
+   - Briefly explain how it was computed.
+   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.
+
+5. **Next Steps**:
+   - What are the limitations or open issues in your current system?
+   - What improvement ideas are you considering?"
+Team Neural Narrators,2025-06-26T04:11:24.268815,how much  time  should presentation take  ?,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points:\n\n1. Use Case/Problem Statement\n2. RAG Pipeline Overview\n3. Live Demonstration\n4. Test Set and Evaluation\n5. Next Steps\n\nAdditionally, there are specific requirements for each point:\n\n1. Use Case/Problem Statement:\n   - Describe the goal of your RAG system.\n   - Specify why this problem is interesting or useful.\n   - Define what types of questions it is designed to answer.\n   - Identify the type of documents you are using.\n\n2. RAG Pipeline Overview:\n   - Present the structure of your system.\n   - Create a diagram showing how the components connect.\n   - Name the different tools you used (e.g. FAISS, flan-t5, …).\n\n3. Live Demonstration:\n   - Include a live demo of your pipeline running end-to-end.\n   - Input a question or query live.\n   - Show the retrieved chunks, the generated answer, and any logs.\n   - The demo should show that your system is functional and connected from retrieval to generation.\n\n4. Test Set and Evaluation:\n   - Describe your test setup.\n   - Specify the types of questions in your test set.\n   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, etc.).\n   - Explain how the metric was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.\n\n5. Next Steps:\n   - Identify the limitations or open issues in your current system.\n   - Specify the improvement ideas you are considering.'}, {'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation must contain the following points:\n\n1. **Use Case/Problem Statement**:\n   - Describe the goal of your RAG system.\n   - Why is this problem interesting or useful?\n   - What types of questions is it designed to answer?\n   - What kind of documents are you using?\n\n2. **RAG Pipeline Overview**:\n   - Present the structure of your system.\n   - Make a diagram showing how the components connect.\n   - Name the different tools you used (e.g. FAISS, flan-t5, …).\n\n3. **Live Demonstration**:\n   - You must include a live demo of your pipeline running end-to-end.\n   - Input a question or query live.\n   - Show the retrieved chunks, the generated answer, and any logs.\n   - The demo should show that your system is functional and connected from retrieval to generation.\n\n4. **Test Set and Evaluation**:\n   - Describe your test setup.\n   - What kinds of questions are in your test set?\n   - How many examples did you use?\n   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, or a relevance score).\n   - Briefly explain how it was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.\n\n5. **Next Steps**:\n   - What are the limitations or open issues in your current system?\n   - What improvement ideas are you considering?'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\nhow much  time  should presentation take  ?""}]",Your presentation should take 7 minutes.
+Team Neural Narrators,2025-06-26T04:13:48.804353,tell me about Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points:\n\n1. Use Case/Problem Statement\n2. RAG Pipeline Overview\n3. Live Demonstration\n4. Test Set and Evaluation\n5. Next Steps\n\nAdditionally, there are specific requirements for each point:\n\n1. Use Case/Problem Statement:\n   - Describe the goal of your RAG system.\n   - Specify why this problem is interesting or useful.\n   - Define what types of questions it is designed to answer.\n   - Identify the type of documents you are using.\n\n2. RAG Pipeline Overview:\n   - Present the structure of your system.\n   - Create a diagram showing how the components connect.\n   - Name the different tools you used (e.g. FAISS, flan-t5, …).\n\n3. Live Demonstration:\n   - Include a live demo of your pipeline running end-to-end.\n   - Input a question or query live.\n   - Show the retrieved chunks, the generated answer, and any logs.\n   - The demo should show that your system is functional and connected from retrieval to generation.\n\n4. Test Set and Evaluation:\n   - Describe your test setup.\n   - Specify the types of questions in your test set.\n   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, etc.).\n   - Explain how the metric was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.\n\n5. Next Steps:\n   - Identify the limitations or open issues in your current system.\n   - Specify the improvement ideas you are considering.'}, {'role': 'user', 'content': 'tell me about Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation must contain the following points:\n\n1. **Use Case/Problem Statement**:\n   - Describe the goal of your RAG system.\n   - Why is this problem interesting or useful?\n   - What types of questions is it designed to answer?\n   - What kind of documents are you using?\n\n2. **RAG Pipeline Overview**:\n   - Present the structure of your system.\n   - Make a diagram showing how the components connect.\n   - Name the different tools you used (e.g. FAISS, flan-t5, …).\n\n3. **Live Demonstration**:\n   - You must include a live demo of your pipeline running end-to-end.\n   - Input a question or query live.\n   - Show the retrieved chunks, the generated answer, and any logs.\n   - The demo should show that your system is functional and connected from retrieval to generation.\n\n4. **Test Set and Evaluation**:\n   - Describe your test setup.\n   - What kinds of questions are in your test set?\n   - How many examples did you use?\n   - Report at least one evaluation metric (e.g. Precision, Recall, F1-score, or a relevance score).\n   - Briefly explain how it was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and failing to retrieve the correct answer.\n\n5. **Next Steps**:\n   - What are the limitations or open issues in your current system?\n   - What improvement ideas are you considering?'}, {'role': 'user', 'content': 'how much  time  should presentation take  ?'}, {'role': 'assistant', 'content': 'Your presentation should take 7 minutes.'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\ntell me about Midterm Presentation Requirements""}]","Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation must contain the following points:
+
+1. Use Case/Problem Statement
+2. RAG Pipeline Overview
+3. Live Demonstration
+4. Test Set and Evaluation
+5. Next Steps"
+Team Neural Narrators,2025-06-26T04:36:29.013419,Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""newData.txt"", ""newData.txt""]","[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 47}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 3}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\ngraphs. Let’s see how that works in the next subsection.\n7.5.3 Computation Graphs\nA computation graph is a representation of the process of computing a mathematical\nexpression, in which the computation is broken down into separate operations, each\nof which is modeled as a node in a graph.\nConsider computing the function L(a,b, c) = c(a+2b). If we make each of the\ncomponent addition and multiplication operations explicit, and add names (d and e)\nfor the intermediate outputs, the resulting series of computations is:\nd = 2 ∗ b\ne = a+d\nL = c ∗ e\nWe can now represent this as a graph, with nodes for each operation, and directed edges showing the outputs from each operation as the inputs to the next, as\nin Fig. 7.12. The simplest use of computation graphs is to compute the value of\nthe function with some given inputs. In the figure, we’ve assumed the inputs a = 3,\nsequences and predicting upcoming words. In subsequent chapters we’ll introduce\nmany other aspects of neural models, such as recurrent neural networks (Chapter 8), the Transformer (Chapter 9), and masked language modeling (Chapter 11).\n2 CHAPTER 7 • NEURAL NETWORKS\n7.1 Units\nThe building block of a neural network is a single computational unit. A unit takes\na set of real valued numbers as input, performs some computation on them, and\nproduces an output.\nAt its heart, a neural unit is taking a weighted sum of its inputs, with one addibias term tional term in the sum called a bias term. Given a set of inputs x1...xn, a unit has\na set of corresponding weights w1...wn and a bias b, so the weighted sum z can be\nrepresented as:\nz = b+\nX\ni\nwixi (7.1)\nOften it’s more convenient to express this weighted sum using vector notation; recall\nvector from linear algebra that a vector is, at heart, just a list or array of numbers. Thus\n\nQuestion:\nMidterm Presentation Requirements""}]","⚠️ The answer may not be based on the provided context.
+Your presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points: 
+
+1. Use Case / Problem Statement - Describe the goal of your RAG system: 
+    * Why is this problem interesting or useful?
+    * What types of questions is it designed to answer?
+    * What kind of documents are you using?
+2. RAG Pipeline Overview - Present the structure of your system: 
+    * Make a diagram showing how the components connect.
+    * Name the different tools that you used (e.g., FAISS, flan-t5, …).
+3. Live Demonstration - You must include a live demo of your pipeline running end-to-end:
+    * Input a question or query live.
+    * Show the retrieved chunks, the generated answer, and any logs.
+    * The demo should show that your system is functional and connected from retrieval to generation.
+4. Test Set and Evaluation - Describe your test setup:
+    * What kinds of questions are in your test set?
+    * How many examples did you use?
+    * Report at least one evaluation metric:
+        * E.g., Precision, Recall, F1-score, or a relevance score.
+        * Briefly explain how it was computed.
+    * Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.
+5. Next Steps - What are the limitations or open issues in your current system? What improvement ideas are you considering?"
+Team Neural Narrators,2025-06-26T04:39:01.089328,Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'Midterm Presentation Requirements'}, {'role': 'assistant', 'content': '⚠️ The answer may not be based on the provided context.\nYour presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points: \n\n1. Use Case / Problem Statement - Describe the goal of your RAG system: \n    * Why is this problem interesting or useful?\n    * What types of questions is it designed to answer?\n    * What kind of documents are you using?\n2. RAG Pipeline Overview - Present the structure of your system: \n    * Make a diagram showing how the components connect.\n    * Name the different tools that you used (e.g., FAISS, flan-t5, …).\n3. Live Demonstration - You must include a live demo of your pipeline running end-to-end:\n    * Input a question or query live.\n    * Show the retrieved chunks, the generated answer, and any logs.\n    * The demo should show that your system is functional and connected from retrieval to generation.\n4. Test Set and Evaluation - Describe your test setup:\n    * What kinds of questions are in your test set?\n    * How many examples did you use?\n    * Report at least one evaluation metric:\n        * E.g., Precision, Recall, F1-score, or a relevance score.\n        * Briefly explain how it was computed.\n    * Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.\n5. Next Steps - What are the limitations or open issues in your current system? What improvement ideas are you considering?'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\nMidterm Presentation Requirements""}]","Based on the provided context, the midterm presentation requirements are as follows:
+
+1. **Use Case / Problem Statement**:
+   - Describe the goal of your RAG system:
+     - Why is this problem interesting or useful?
+     - What types of questions is it designed to answer?
+     - What kind of documents are you using?
+2. **RAG Pipeline Overview**:
+   - Present the structure of your system:
+     - Make a diagram showing how the components connect.
+     - Name the different tools that you used (e.g., FAISS, flan-t5, …).
+3. **Live Demonstration**:
+   - You must include a live demo of your pipeline running end-to-end:
+     - Input a question or query live.
+     - Show the retrieved chunks, the generated answer, and any logs.
+     - The demo should show that your system is functional and connected from retrieval to generation.
+4. **Test Set and Evaluation**:
+   - Describe your test setup:
+     - What kinds of questions are in your test set?
+     - How many examples did you use?
+   - Report at least one evaluation metric:
+     - E.g., Precision, Recall, F1-score, or a relevance score.
+     - Briefly explain how it was computed.
+   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.
+5. **Next Steps**:
+   - What are the limitations or open issues in your current system?
+   - What improvement ideas are you considering?"
+Team Neural Narrators,2025-06-26T04:45:31.794534,Midterm Presentation Requirements,"[""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf"", ""Midterm Presentation Requirements.pdf""]","[{'role': 'user', 'content': 'Midterm Presentation Requirements'}, {'role': 'assistant', 'content': '⚠️ The answer may not be based on the provided context.\nYour presentation should take 7 minutes. You should prepare presentation slides and upload them in the VC course after your presentation. The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum. The presentation must contain the following points: \n\n1. Use Case / Problem Statement - Describe the goal of your RAG system: \n    * Why is this problem interesting or useful?\n    * What types of questions is it designed to answer?\n    * What kind of documents are you using?\n2. RAG Pipeline Overview - Present the structure of your system: \n    * Make a diagram showing how the components connect.\n    * Name the different tools that you used (e.g., FAISS, flan-t5, …).\n3. Live Demonstration - You must include a live demo of your pipeline running end-to-end:\n    * Input a question or query live.\n    * Show the retrieved chunks, the generated answer, and any logs.\n    * The demo should show that your system is functional and connected from retrieval to generation.\n4. Test Set and Evaluation - Describe your test setup:\n    * What kinds of questions are in your test set?\n    * How many examples did you use?\n    * Report at least one evaluation metric:\n        * E.g., Precision, Recall, F1-score, or a relevance score.\n        * Briefly explain how it was computed.\n    * Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.\n5. Next Steps - What are the limitations or open issues in your current system? What improvement ideas are you considering?'}, {'role': 'user', 'content': 'Midterm Presentation Requirements'}, {'role': 'assistant', 'content': 'Based on the provided context, the midterm presentation requirements are as follows:\n\n1. **Use Case / Problem Statement**:\n   - Describe the goal of your RAG system:\n     - Why is this problem interesting or useful?\n     - What types of questions is it designed to answer?\n     - What kind of documents are you using?\n2. **RAG Pipeline Overview**:\n   - Present the structure of your system:\n     - Make a diagram showing how the components connect.\n     - Name the different tools that you used (e.g., FAISS, flan-t5, …).\n3. **Live Demonstration**:\n   - You must include a live demo of your pipeline running end-to-end:\n     - Input a question or query live.\n     - Show the retrieved chunks, the generated answer, and any logs.\n     - The demo should show that your system is functional and connected from retrieval to generation.\n4. **Test Set and Evaluation**:\n   - Describe your test setup:\n     - What kinds of questions are in your test set?\n     - How many examples did you use?\n   - Report at least one evaluation metric:\n     - E.g., Precision, Recall, F1-score, or a relevance score.\n     - Briefly explain how it was computed.\n   - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.\n5. **Next Steps**:\n   - What are the limitations or open issues in your current system?\n   - What improvement ideas are you considering?'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 0}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 1}\n{'source': 'Midterm Presentation Requirements.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 2}\nContext:\nMidterm\n \nPresentation\n \nRequirements\n \nYour\n \npresentation\n \nshould\n \ntake\n \n7\n \nminutes\n.\n \nYou\n \nshould\n \nprepare\n \npresentation\n \nslides\n \nand\n \nupload\n \nthem\n \nin\n \nthe\n \nVC\n \ncourse\n \nafter\n \nyour\n \npresentation.\n \nThe\n \npresentation\n \nwill\n \ntake\n \nplace\n \non\n \nThursday,\n \n26.6.,\n \nin\n \nWE5\n \n01.003\n.\n \nThe\n \ntime\n \nslot\n \nfor\n \nyour\n \ngroup\n \nwill\n \nbe\n \npublished\n \nin\n \nthe\n \nannouncement\n \nforum.\n \nThe\n \npresentation\n \nmust\n \ncontain\n \nthe\n \nfollowing\n \npoints:\n \n1.\n \nUse\n \nCase\n \n/\n \nProblem\n \nStatement\n \nDescribe\n \nthe\n \ngoal\n \nof\n \nyour\n \nRAG\n \nsystem:\n \n●\n \nWhy\n \nis\n \nthis\n \nproblem\n \ninteresting\n \nor\n \nuseful?\n \n●\n \nWhat\n \ntypes\n \nof\n \nquestions\n \nis\n \nit\n \ndesigned\n \nto\n \nanswer?\n \n●\n \nWhat\n \nkind\n \nof\n \ndocuments\n \nare\n \nyou\n \nusing?\n \n2.\n \nRAG\n \nPipeline\n \nOverview\n \nPresent\n \nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\nthe\n \nstructure\n \nof\n \nyour\n \nsystem:\n \nMake\n \na\n \ndiagram\n \nshowing\n \nhow\n \nthe\n \ncomponents\n \nconnect.\n \nName\n \nthe\n \ndifferent\n \ntools\n \nthat\n \nyou\n \nused\n \n(e.g.\n \nFAISS,\n \nflan-t5,\n \n…).\n \n \n3.\n \nLive\n \nDemonstration\n \nYou\n \nmust\n \ninclude\n \na\n \nlive\n \ndemo\n \nof\n \nyour\n \npipeline\n \nrunning\n \nend-to-end:\n \n●\n \nInput\n \na\n \nquestion\n \nor\n \nquery\n \nlive.\n \n●\n \nShow\n \nthe\n \nretrieved\n \nchunks,\n \nthe\n \ngenerated\n \nanswer,\n \nand\n \nany\n \nlogs.\n \nThe\n \ndemo\n \nshould\n \nshow\n \nthat\n \nyour\n \nsystem\n \nis\n \nfunctional\n \nand\n \nconnected\n \nfrom\n \nretrieval\n \nto\n \ngeneration.\n \n4.\n \nTest\n \nSet\n \nand\n \nEvaluation\n \nDescribe\n \nyour\n \ntest\n \nsetup:\n \n●\n \nWhat\n \nkinds\n \nof\n \nquestions\n \nare\n \nin\n \nyour\n \ntest\n \nset?\n \n●\n \nHow\n \nmany\n \nexamples\n \ndid\n \nyou\n \nuse?\n \nReport\n \nat\n \nleast\n \none\n \nevaluation\n \nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\nmetric\n:\n \n●\n \nE.g.,\n \nPrecision,\n \nRecall,\n \nF1-score,\n \nor\n \na\n \nrelevance\n \nscore.\n \n●\n \nBriefly\n \nexplain\n \nhow\n \nit\n \nwas\n \ncomputed.\n \nShow\n \nat\n \nleast\n \ntwo\n \nexample\n \ninputs\n \nand\n \noutputs\n \nwith\n \nretrieved\n \ntext\n \nand\n \ngeneration\n \nof\n \nthe\n \nsystem\n \nsucceeding\n \nand\n \nthe\n \nsystem\n \nfailing\n \nto\n \nretrieve\n \nthe\n \ncorrect\n \nanswer.\n \nExplain\n \nwhy.\n \n \n5.\n \nNext\n \nSteps\n \nWhat\n \nare\n \nthe\n \nlimitations\n \nor\n \nopen\n \nissues\n \nin\n \nyour\n \ncurrent\n \nsystem?\n \nWhat\n \nimprovement\n \nideas\n \nare\n \nyou\n \nconsidering?\n\nQuestion:\nMidterm Presentation Requirements""}]","The Midterm Presentation Requirements are as follows:
+
+1. **Presentation Duration**: Your presentation should take 7 minutes.
+2. **Presentation Submission**: You should prepare presentation slides and upload them in the VC course after your presentation.
+3. **Presentation Venue and Timing**: The presentation will take place on Thursday, 26.6., in WE5 01.003. The time slot for your group will be published in the announcement forum.
+4. **Presentation Content**:
+   - **Use Case / Problem Statement**: Describe the goal of your RAG system:
+     - Why is this problem interesting or useful?
+     - What types of questions is it designed to answer?
+     - What kind of documents are you using?
+   - **RAG Pipeline Overview**: Present the structure of your system:
+     - Make a diagram showing how the components connect.
+     - Name the different tools that you used (e.g., FAISS, flan-t5, …).
+   - **Live Demonstration**: You must include a live demo of your pipeline running end-to-end:
+     - Input a question or query live.
+     - Show the retrieved chunks, the generated answer, and any logs.
+     - The demo should show that your system is functional and connected from retrieval to generation.
+   - **Test Set and Evaluation**: Describe your test setup:
+     - What kinds of questions are in your test set?
+     - How many examples did you use?
+     - Report at least one evaluation metric:
+       - E.g., Precision, Recall, F1-score, or a relevance score.
+       - Briefly explain how it was computed.
+       - Show at least two example inputs and outputs with retrieved text and generation of the system succeeding and the system failing to retrieve the correct answer. Explain why.
+   - **Next Steps**: What are the limitations or open issues in your current system? What improvement ideas are you considering?"
+Team Neural Narrators,2025-06-26T05:32:26.896307,which is the most common use of opt-in e-mail marketing,"[""newData.txt"", ""newData.txt"", ""newData.txt"", ""newData.txt"", ""newData.txt""]","[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 37}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 35}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 1}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 7}\n{'source': 'newData.txt', 'source_type': 'txt', 'date': '2025-05-22', 'chunk_id': 83}\nContext:\n“was” p(-)\np(neut) Figure 7.11 Feedforward network sentiment analysis using a pooled embedding of the input words.\nWhile Eq. 7.21 shows how to classify a single example x, in practice we want\nto efficiently classify an entire test set of m examples. We do this by vectorizing\nthe process, just as we saw with logistic regression; instead of using for-loops to go\nthrough each example, we’ll use matrix multiplication to do the entire computation\nof an entire test set at once. First, we pack all the input feature vectors for each input\nx into a single input matrix X, with each row i a row vector consisting of the pooled\nembedding for input example x\n(i)\n(i.e., the vector x\n(i)\n). If the dimensionality of our\npooled input embedding is d, X will be a matrix of shape [m×d].\nWe will then need to slightly modify Eq. 7.21. X is of shape [m×d] and W is of\nshape [dh ×d], so we’ll have to reorder how we multiply X and W and transpose W\nso they correctly multiply to yield a matrix H of shape [m×dh].\np(-)\np(neut)\nFigure 7.10 Feedforward network sentiment analysis using traditional hand-built features\nof the input text.\nMost applications of neural networks for NLP do something different, however.\nInstead of using hand-built human-engineered features as the input to our classifier,\nwe draw on deep learning’s ability to learn features from the data by representing\nwords as embeddings, like the word2vec or GloVe embeddings we saw in Chapter 6.\nThere are various ways to represent an input for classification. One simple baseline\npooling is to apply some sort of pooling function to the embeddings of all the words in the\ninput. For example, for a text with n input words/tokens w1,...,wn, we can turn the\nn embeddings e(w1),...,e(wn) (each of dimensionality d) into a single embedding\nalso of dimensionality d by just summing the embeddings, or by taking their mean\n(summing and then dividing by n):\nxmean =\n1\nn\nXn\ni=1\ne(wi) (7.20)\n7.4 • FEEDFORWARD NETWORKS FOR NLP: CLASSIFICATION 13\nof which takes a vector of input values and produces a single output value. In this\nchapter we introduce the neural net applied to classification. The architecture we\nfeedforward introduce is called a feedforward network because the computation proceeds iteratively from one layer of units to the next. The use of modern neural nets is often\ndeep learning called deep learning, because modern networks are often deep (have many layers).\nNeural networks share much of the same mathematics as logistic regression. But\nneural networks are a more powerful classifier than logistic regression, and indeed a\nminimal neural network (technically one with a single ‘hidden layer’) can be shown\nto learn any function.\nNeural net classifiers are different from logistic regression in another way. With\nlogistic regression, we applied the regression classifier to many different tasks by\ndeveloping many rich kinds of feature templates based on domain knowledge. When\nLet’s walk through an example just to get an intuition. Let’s suppose we have a\nunit with the following weight vector and bias:\nw = [0.2,0.3,0.9]\nb = 0.5\nWhat would this unit do with the following input vector:\nx = [0.5,0.6,0.1]\nThe resulting output y would be:\ny = σ(w · x+b) = 1\n1+e\n−(w·x+b)\n=\n1\n1+e\n−(.5∗.2+.6∗.3+.1∗.9+.5)\n=\n1\n1+e\n−0.87 = .70\nIn practice, the sigmoid is not commonly used as an activation function. A function\ntanh that is very similar but almost always better is the tanh function shown in Fig. 7.3a;\ntanh is a variant of the sigmoid that ranges from -1 to +1:\ny = tanh(z) = e\nz −e\n−z\ne\nz +e\n−z\n(7.5)\nThe simplest activation function, and perhaps the most commonly used, is the recReLU tified linear unit, also called the ReLU, shown in Fig. 7.3b. It’s just the same as z\nwhen z is positive, and 0 otherwise:\ny = ReLU(z) = max(z,0) (7.6)\nSrivastava, N., G. E. Hinton, A. Krizhevsky, I. Sutskever,\nand R. R. Salakhutdinov. 2014. Dropout: a simple\nway to prevent neural networks from overfitting. JMLR,\n15(1):1929–1958.\nWidrow, B. and M. E. Hoff. 1960. Adaptive switching circuits. IRE WESCON Convention Record, volume 4.\n\nQuestion:\nwhich is the most common use of opt-in e-mail marketing""}]",I don’t know based on the provided context.
+Team Neural Narrators,2025-06-26T06:38:02.811199,tell me about Denmark,[],"[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n\nContext:\n\n\nQuestion:\ntell me about Denmark""}]","Denmark is a country located in Northern Europe consisting of the Jutland peninsula and a group of islands known as the Danish Archipelago. The capital is Copenhagen, and it's also the most populous city.
+
+Denmark shares borders with Germany to the south and the Baltic Sea to the east and northeast. The country has a population of approximately 5.9 million people and a high standard of living.
+
+Denmark is also home to the famous concept of the ""Hygge"" (cosiness) and the concept of ""Social Welfare."" It has a strong focus on education, social equality, and healthcare.
+
+The Danish economy is based on a mix of services, including finance, manufacturing, and renewable energy. The country has a strong agricultural sector, particularly in relation to pork and dairy products.
+
+Denmark is known for its stunning landscapes, including white sandy beaches, dense forests, and scenic fjords."
+Team Neural Narrators,2025-06-26T06:38:38.934117,tell me about Quality of Life Index of Denmark,[],"[{'role': 'user', 'content': 'tell me about Denmark'}, {'role': 'assistant', 'content': 'Denmark is a country located in Northern Europe consisting of the Jutland peninsula and a group of islands known as the Danish Archipelago. The capital is Copenhagen, and it\'s also the most populous city.\n\nDenmark shares borders with Germany to the south and the Baltic Sea to the east and northeast. The country has a population of approximately 5.9 million people and a high standard of living.\n\nDenmark is also home to the famous concept of the ""Hygge"" (cosiness) and the concept of ""Social Welfare."" It has a strong focus on education, social equality, and healthcare.\n\nThe Danish economy is based on a mix of services, including finance, manufacturing, and renewable energy. The country has a strong agricultural sector, particularly in relation to pork and dairy products.\n\nDenmark is known for its stunning landscapes, including white sandy beaches, dense forests, and scenic fjords.'}, {'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n\nContext:\n\n\nQuestion:\ntell me about Quality of Life Index of Denmark""}]",The Quality of Life Index of Denmark is considered very high. Denmark consistently ranks among the top countries in various quality of life ratings and indices.
+Team Neural Narrators,2025-06-26T06:42:52.564952,what. is Cyber Security ,"[""A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf"", ""A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf"", ""A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf"", ""A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf"", ""A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf""]","[{'role': 'user', 'content': ""You are an expert assistant. Only answer if relevant information is found in the provided context. If unsure, say: 'I don’t know based on the provided context.'\n\nContext Source Info:\n{'source': 'A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 3}\n{'source': 'A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 5}\n{'source': 'A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 4}\n{'source': 'A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 7}\n{'source': 'A_Study_Of_Cyber_Security_Challenges_And_Its_Emerg.pdf', 'source_type': 'pdf', 'date': '2025-06-26', 'chunk_id': 23}\nContext:\nday. Today more than 60  percent of total \ncommercial transactions are done online, so this \nfield required a high quality of security for \ntransparent and best transactions.  Hence cyber \nsecurity has become a latest issue. The scope of \ncyber security is n ot just limited to securing the \ninformation in IT industry but also to various \nother fields like cyber space etc.  \n \n Even the latest technologies like cloud \ncomputing, mobile computing, E -commerce, net \nbanking etc also needs high level of security. \nSince th ese technologies hold some important \ninformation regarding a person their security \nhas become a must thing. Enhancing cyber  \nsecurity and protecting critical information \ninfrastructures are essential to each nation's \nsecurity and economic wellbeing. Making the \nInternet safer (and protecting Internet users) has \nbecome integral to the development of new services as well as governmental policy .   The \nfight against cyber crime needs a\nJustice expands the definition of cyber crime  to \ninclude any illegal activity that uses a computer \nfor the storage of evidence. The  growing list of \ncyber crimes  includes crimes that have been \nmade possible by computers, such as  network \nintrusions and the dissemination of computer \nviruses, as well as computer -based variations of \nexisting crimes, such as identity \ntheft, stalking , bullying and  terrorism  which \nhave become as major problem to people and \nnations. Usually in common man’s language \ncyber cr ime may be defined  as crime committed \nusing a computer and the internet to steel a \nperson’s identity or sell contraband or stalk \nvictims or disrupt operations with malevolent \nprograms. As day by day technology is playing \nin major role in a person’s life th e cyber crimes \nalso will increase along with the technological \nadvances.                                                                                               \n3. CYBER SECURITY\nInternet safer (and protecting Internet users) has \nbecome integral to the development of new services as well as governmental policy .   The \nfight against cyber crime needs a \ncomprehensive  and a safer approach. Given that \ntechnical measures alone cannot  prevent any \ncrime, it is critical that law enforcement \nagencies are allowed to investigate and \nprosecute cyber crime effectively . Today many \nnations and governments are imposing strict \nlaws on cyber securities in order to prevent the \nloss of some importan t information.  Every \nindividual must also be trained on this cyber \nsecurity and save themselves from these \nincreasing cyber crimes  \n \n2. CYBER CRIME  \n \nCyber crime  is a term for any illegal activity that \nuses a computer as its primary means of \ncommission  and t heft. The U.S. Department of \nJustice expands the definition of cyber crime  to \ninclude any illegal activity that uses a computer \nfor the storage of evidence. The  growing list of\nIncrease/ \n(decrease ) \n \nFraud  2439  2490  2 \nIntrusion  2203  1726 (22) \nSpam  291 614 111 \nMalicious \ncode  353 442 25 \nCyber \nHarassment  173 233 35 \nContent \nrelated  10 42 320 \nIntrusion \nAttempts  55 24 (56) \nDenial of \nservices  12 10 (17) \nVulnerability \nreports  45 11 (76) \nTotal  5581  5592   \n                              Table I  \nThe above  Comparison of Cyber Security \nIncidents reported to Cyber999  in Malaysia  \nfrom January –June 2012 and  2013 clearly \nexhibits the cyber security threats . As crime is \nincreasing even the  security measures are also  \nincreasing. According to the survey of U.S. technology and healthcare executives \nnationwide, Silicon Valley Bank found that \ncompanies believe cyber attacks are a serious \nthreat to both their data and their business \ncontinuity.  \n\uf0b7 98% of companies are maintaining or \nincreasing their cyber security \nresources and of those, half are \nincreasing resources devoted to online \nattacks this year\ncrimes but we should try our level best to \nminimize them in order to have a safe and \nsecure future in cyber space.  \nREFERENCES  \n1. A Sophos Article 04.12v1.d NA, eight  \ntrends changing network security by James \nLyne. \n2. Cyber Security: Understanding Cyber \nCrimes - Sunit  Belapure  Nina  Godbole  \n3. Computer Security Practices in Non \nProfit Organisations  – A Net Action Report \nby Audrie  Krause . \n4. A Look back on Cyber Security 2012 by \nLuis corrons – Panda Labs.  \n5. International Journal of Scientific & \nEngineering Research, Volume 4, Issue 9, \nSeptember -2013  Page nos. 68 – 71 ISSN \n2229 -5518 ,  “Study  of Cloud Computing in \nHealthCare Industry  “ by G.Nikhita Reddy, \nG.J.Ugander Reddy  \n6. IE EE Security and Privacy Magazine  – \nIEEECS “Safety  Critical Systems – Next \nGeneration “July / Aug 2013.  \n7. CIO Asia, September 3rd, H1 2013: \nCyber security  in malasia by Avanthi \nKumar.\n\nQuestion:\nwhat. is Cyber Security ""}]","Cyber security is the protection of computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks, unauthorized access, use, disclosure, disruption, modification, or destruction, according to the provided context."

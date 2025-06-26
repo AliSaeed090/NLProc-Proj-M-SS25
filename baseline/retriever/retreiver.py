@@ -1,90 +1,112 @@
-import multiprocessing
-multiprocessing.set_start_method("spawn", force=True)
 import os
-import pickle
-from typing import List, Tuple
+import csv
+from typing import List, Optional
+from datetime import datetime
 
-import faiss
-from sentence_transformers import SentenceTransformer
+from langchain.vectorstores import FAISS
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.schema import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
 
-
-def chunk_text(text: str, chunk_size: int = 500, overlap: int = 50) -> List[str]:
-    """
-    Split text into chunks of ~chunk_size tokens (approx. words here), with overlap.
-    """
-    words = text.split()
-    chunks = []
-    start = 0
-    while start < len(words):
-        end = min(start + chunk_size, len(words))
-        chunk = " ".join(words[start:end])
-        chunks.append(chunk)
-        start += chunk_size - overlap
-    return chunks
-
-
 class Retriever:
-    def __init__(self, embed_model_name: str = "sentence-transformers/all-mpnet-base-v2", device: str = "cpu"):
-        self.embedder = SentenceTransformer(embed_model_name, device=device)
-        self.index = None
-        self.documents: List[Tuple[str, str]] = []  # (doc_id, text)
+    def __init__(self, embed_model_name: str = "BAAI/bge-large-en", device: str = "cpu"):
+        self.embedder = HuggingFaceEmbeddings(model_name=embed_model_name)
+        self.vectorstore: Optional[FAISS] = None
 
-    def add_documents(self, paths: List[str]):
-        """
-        Load documents from file paths (.txt, .md, .pdf), chunk them, embed, and add to FAISS index.
-        """
-        texts = []
-        for path in paths:
-            ext = os.path.splitext(path)[1].lower()
+    def _extract_text(self, path: str) -> str:
+        ext = os.path.splitext(path)[1].lower()
+        try:
             if ext in ['.txt', '.md']:
                 with open(path, 'r', encoding='utf-8') as f:
-                    raw = f.read()
+                    return f.read()
             elif ext == '.pdf':
                 reader = PdfReader(path)
-                raw = "\n".join(page.extract_text() or "" for page in reader.pages)
-            else:
-                continue
-            for i, chunk in enumerate(chunk_text(raw)):
-                doc_id = f"{os.path.basename(path)}_chunk{i}"
-                texts.append((doc_id, chunk))
-        # prepare embeddings
-        corpus = [t[1] for t in texts]
-        embeddings = self.embedder.encode(corpus, convert_to_numpy=True)
-        # build FAISS
-        dim = embeddings.shape[1]
-        self.index = faiss.IndexFlatIP(dim)
-        faiss.normalize_L2(embeddings)
-        self.index.add(embeddings)
-        self.documents = texts
+                return "\n".join(page.extract_text() or "" for page in reader.pages)
+            elif ext == '.csv':
+                return self._extract_csv_text(path)
+        except Exception as e:
+            print(f"[WARN] Failed to read {path}: {e}")
+        return ""
 
-    def query(self, question: str, top_k: int = 10) -> List[Tuple[str, str]]:
-        """
-        Embed the question and retrieve top_k chunks.
-        Returns list of (doc_id, chunk).
-        """
-        q_emb = self.embedder.encode([question], convert_to_numpy=True)
-        faiss.normalize_L2(q_emb)
-        D, I = self.index.search(q_emb, top_k)
-        results = []
-        for idx in I[0]:
-            doc_id, text = self.documents[idx]
-            results.append((doc_id, text))
-        return results
+    def _extract_csv_text(self, path: str) -> str:
+        lines = []
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                reader = csv.reader(f)
+                header = next(reader, None)
+                if header:
+                    lines.append(", ".join(header))
+                for row in reader:
+                    lines.append(", ".join(row))
+        except Exception as e:
+            print(f"[WARN] Failed to parse CSV {path}: {e}")
+        return "\n".join(lines)
+
+    def _extract_date(self, path: str) -> str:
+        base = os.path.basename(path)
+        for fmt in ("%Y-%m-%d", "%Y%m%d"):
+            try:
+                return datetime.strptime(base[:10], fmt).strftime("%Y-%m-%d")
+            except:
+                continue
+        try:
+            ts = os.path.getmtime(path)
+            return datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
+        except:
+            return "unknown"
+
+    def add_documents(self, paths: List[str]):
+        splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=300)
+        documents = []
+        
+        for path in paths:
+            text = self._extract_text(path)
+            if not text.strip():
+                continue
+
+            chunks = splitter.split_text(text)
+            file_name = os.path.basename(path)
+            source_type = os.path.splitext(path)[1].lower().strip('.')
+            doc_date = self._extract_date(path)
+
+            for i, chunk in enumerate(chunks):
+                documents.append(Document(
+                    page_content=chunk,
+                    metadata={
+                        "source": file_name,
+                        "source_type": source_type,
+                        "date": doc_date,
+                        "chunk_id": i
+                    }
+                ))
+
+        if documents:
+            self.vectorstore = FAISS.from_documents(documents, self.embedder)
+
+    def query(self, question: str, top_k: int = 5, filter_source_type: Optional[str] = None, filter_date_after: Optional[str] = None):
+        if self.vectorstore is None:
+            raise ValueError("No documents indexed yet.")
+        
+        retriever = self.vectorstore.as_retriever(search_kwargs={"k": top_k})
+        
+        results = retriever.get_relevant_documents(question)
+
+        filtered_results = []
+        for doc in results:
+            if filter_source_type and doc.metadata.get("source_type") != filter_source_type:
+                continue
+            if filter_date_after:
+                date = doc.metadata.get("date")
+                if date == "unknown" or date < filter_date_after:
+                    continue
+            filtered_results.append(doc)
+        
+        return [(doc.metadata, doc.page_content) for doc in filtered_results[:top_k]]
 
     def save(self, path: str):
-        """
-        Save FAISS index and document metadata.
-        """
-        os.makedirs(path, exist_ok=True)
-        faiss.write_index(self.index, os.path.join(path, "index.faiss"))
-        with open(os.path.join(path, "docs.pkl"), "wb") as f:
-            pickle.dump(self.documents, f)
+        if self.vectorstore:
+            self.vectorstore.save_local(path)
 
     def load(self, path: str):
-        """
-        Load FAISS index and document metadata.
-        """
-        self.index = faiss.read_index(os.path.join(path, "index.faiss"))
-        with open(os.path.join(path, "docs.pkl"), "rb") as f:
-            self.documents = pickle.load(f)
+        self.vectorstore = FAISS.load_local(path, self.embedder)

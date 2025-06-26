@@ -1,63 +1,54 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-import torch
-
+import os
+from cerebras.cloud.sdk import Cerebras
+from dotenv import load_dotenv
+load_dotenv()
 
 class Generator:
-    def __init__(self, model_name="google/flan-t5-large", device=None):
-        self.device = device or "cpu"
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(self.device)
-
-    def build_prompt(self, context, question):
-        combined = "\n".join(context)
-        return (
-            "You are an expert assistant. Provide a comprehensive, richly detailed answer "
-            "of at least 150 words, including examples and explanations based strictly on the context.\n\n"
-            f"Context:\n{combined}\n\n"
-            f"Question:\n{question}\n\n"
-            "Answer in detail:"
-        )
-
-    def generate_answer(self, prompt, **generate_kwargs):
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True).to(self.device)
-        defaults = {
-            "max_length": 512,
-            "min_length": 150,
-            "num_beams": 4,
-            "length_penalty": 1.0,
-            "early_stopping": True,
-        }
-        kwargs = {**defaults, **generate_kwargs}
-        outputs = self.model.generate(**inputs, **kwargs)
-        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-    def __init__(self, model_name: str = "google/flan-t5-large", device: str = None):
-        self.device = "cpu"
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name).to(self.device)
-    def build_prompt(self, context: list, question: str) -> str:
+    def __init__(self, model_name: str = "llama3.1-8b"):
         """
-        Format a prompt by joining context chunks and appending the question.
+        Initialize Cerebras client and set model.
+        """
+        api_key = os.environ.get("CEREBRAS_API_KEY")
+        if not api_key:
+            raise ValueError("❌ CEREBRAS_API_KEY environment variable not set.")
+        
+        self.client = Cerebras(api_key=api_key)
+        self.model_name = model_name
+
+    def build_prompt(self, context: list, metadata: list, question: str, history: list = None) -> list:
+        """
+        Build the prompt messages in OpenAI-compatible format.
         """
         combined_context = "\n".join(context)
-        prompt = (
-            "You are an expert assistant that only answers questions about quries if the relevant information is available in the given context.\n"
-            "Answer strictly based on the context provided..\n"
+        meta_info = "\n".join(metadata)
+
+        messages = []
+        if history:
+            for q, a in history[-3:]:
+                messages.append({"role": "user", "content": q})
+                messages.append({"role": "assistant", "content": a})
+
+        # Add current context + question
+        user_message = (
+            "You are an expert assistant. Only answer if relevant information is found in the provided context. "
+            "If unsure, say: 'I don’t know based on the provided context.'\n\n"
+            f"Context Source Info:\n{meta_info}\n"
             f"Context:\n{combined_context}\n\n"
-            f"Question:\n{question}\n\n"
-           
+            f"Question:\n{question}"
         )
-        return prompt
+        messages.append({"role": "user", "content": user_message})
+        return messages
 
-    def generate_answer(self, prompt: str, max_length: int = 1028) -> str:
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True).to(self.device)
-        outputs = self.model.generate(
-              **inputs,
-               max_length=max_length,
-              
-                temperature=0.6,             # Lower = more deterministic
-                do_sample=True
-               
-
+    def generate_answer(self, messages: list, max_tokens: int = 1024) -> str:
+        """
+        Call Cerebras chat completion API.
+        """
+        response = self.client.chat.completions.create(
+            messages=messages,
+            model=self.model_name,
+            max_tokens=max_tokens
         )
-        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        # Extract the assistant's reply
+        print(response)
+
+        return response.choices[0].message.content
