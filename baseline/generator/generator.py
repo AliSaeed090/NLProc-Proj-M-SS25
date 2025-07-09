@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Generator:
-    def __init__(self, model_name: str = "llama3.1-8b"):
+    def __init__(self, model_name: str = "deepseek-r1-distill-llama-70b"):
         """
         Initialize Cerebras client and set model.
         """
