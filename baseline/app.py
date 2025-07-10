@@ -1,6 +1,6 @@
 import streamlit as st
 from pipeline import Pipeline
-from metrics.recall_evaluator import compute_recall_at_k
+from metrics.recall_evaluator import compute_recall_at_k, compute_precision_recall_f1_at_k, compute_f1_at_k
 from metrics.latency_benchmark import benchmark_latency
 import os
 import time 
@@ -116,7 +116,16 @@ elif mode == "Metrics Dashboard":
     if st.button("Run Recall@k"):
         with st.spinner("Running benchmark..."):
             recall = compute_recall_at_k(pipe.retriever, benchmark_data, k=k)
+    #         p, r, f = compute_precision_recall_f1_at_k(
+    #     retriever=pipe.retriever,
+    #     benchmark_data=benchmark_data,
+    #     k=k
+    # )
         st.success(f"Recall@{k}: {recall:.2%}")
+        # st.success(f"r@{k}: {r:.2%}")
+        # st.success(f"Precision@{k}: {recall:.2%}")
+        # st.success(f"f1@{k}: {recall:.2%}")
+
 
     st.header("⚡ Latency Benchmark")
     test_query = st.text_input("Query for latency test", "What is a neural network?")
